@@ -10,5 +10,6 @@ public class Main {
         System.out.println("Maximum salary have " + Employee.maxSalary(employees));
         System.out.println("Average salary is " + Employee.averageSalary(employees));
         Employee.getAllNames(employees);
+
     }
 }

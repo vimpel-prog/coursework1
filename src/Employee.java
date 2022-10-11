@@ -2,7 +2,7 @@ public class Employee {
     private String name;
     private int department;
     private int salary;
-    private static int id = 0;
+    private int id = 0;
 
     public String getName() {
         return name;
@@ -16,7 +16,7 @@ public class Employee {
         return salary;
     }
 
-    public static int getId() {
+    public int getId() {
         return id;
     }
 
@@ -41,6 +41,8 @@ public class Employee {
     public static int getSum(Employee[] employees) {
         int sum = 0;
         for (Employee employee : employees) {
+            if (employee == null)
+                continue;
             sum += employee.salary;
         }
         return sum;
@@ -49,6 +51,8 @@ public class Employee {
     public static Employee minSalary(Employee[] employee) {
         int idMin = 0;
         for (int i = 1; i < employee.length; i++) {
+            if (employee[i] == null)
+                continue;
             if (employee[i].salary < employee[idMin].salary) {
                 idMin = i;
             }
@@ -59,6 +63,8 @@ public class Employee {
     public static Employee maxSalary(Employee[] employee) {
         int idMax = 0;
         for (int i = 1; i < employee.length; i++) {
+            if (employee[i] == null)
+                continue;
             if (employee[i].salary > employee[idMax].salary) {
                 idMax = i;
             }
@@ -72,6 +78,8 @@ public class Employee {
 
     public static void getAllNames(Employee[] employees) {
         for (Employee employee : employees) {
+            if (employee == null)
+                continue;
             System.out.println(employee.name);
         }
     }
