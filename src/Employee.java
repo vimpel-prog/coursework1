@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Employee {
     private String name;
     private int department;
@@ -82,5 +84,18 @@ public class Employee {
                 continue;
             System.out.println(employee.name);
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Employee employee = (Employee) o;
+        return department == employee.department && salary == employee.salary && Objects.equals(name, employee.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, department, salary);
     }
 }
